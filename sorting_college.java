@@ -36,9 +36,26 @@ public class sorting_college {
         }
     }
 
+    /* its a third commit for as a INSERTION SORT */
+    public static void INsertion_Sort(int number[]) {
+        for (int i = 1; i < number.length; i++) {
+            int curr = number[i];
+            int j = i - 1;
+            while (j >= 0 && number[j] > curr) {
+                number[j + 1] = number[j];
+                j--;
+            }
+            number[j + 1] = curr;// number[i];
+        }
+        for (int i = 0; i < number.length; i++) {
+            System.out.print(number[i] + " ");
+        }
+    }
+
     public static void main(String args[]) {
         int number[] = { 1, 473, 32, 21, 5, 49, 77, 41, 66, 44, 52, 344, 87, 91, 152, 88 };
         Bubble_sort(number);
         Selection_sort(number);
+        INsertion_Sort(number);
     }
 }
